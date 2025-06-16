@@ -8,7 +8,7 @@ type NavItem = {
 // app/components/Header.tsx
 export default function Header() {
 
-  let arr : NavItem[] = [
+  const arr : NavItem[] = [
     {name: "Lorem Ipsum ▾", href: "#"},
     {name: "Lorem Ipsum ▾", href: "/SectionI"}, 
     {name: "Lorem Ipsum ▾", href: "#"},

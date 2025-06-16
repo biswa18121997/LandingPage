@@ -17,7 +17,7 @@ const HeroWithCard: React.FC<HeroWithCardProps> = ({
   description = `Aliquet sed nulla tincidunt pulvinar sed fames sit facilisis dictumst. Ornare faucibus quis velit 
     fringilla aliquam ultricies. Malesuada ut aliquam at ac est nisi, interdum etiam dignissim. Sed ut 
     vestibulum eget purus ornare. Risus elit et fringilla habitant ut facilisi.`,
-  imageUrl = '/bikers.jpg',
+  
   cardTitle = 'Artist & Investor',
   cardText = `Enim sagittis, sit porttitor morbi lobortis amet, libero adipiscing auctor. Malesuada tristique 
     libero, id netus tincidunt. Egestas ac arcu amet nisl quis est ...`,

@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import React from 'react';
 
-interface ScooterShowcaseProps {
-  imageUrl?: string;
-}
+// interface ScooterShowcaseProps {
+//   imageUrl?: string;
+// }
 
 export default function SectionSix() {
   return (

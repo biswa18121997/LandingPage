@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SectionI from "@/components/SectionI";
 import SectionII from "@/components/SectionII";
@@ -17,7 +16,6 @@ import SectionSix from "@/components/SectionSix";
 import BikersHi from "@/components/BikersHi";
 import FAQAccordion from "@/components/FAQAccordion";
 import SectionSeven from "@/components/SectionSeven";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 
 const NoLimits: NextPage = () => {
   // Placeholder image URLs (you can replace these with actual URLs or local assets)
@@ -51,9 +52,11 @@ const NoLimits: NextPage = () => {
               <div className="grid grid-cols-2 auto-rows-min gap-4">
                 {images.map((src, index) => (
                   <div key={index} className="w-full">
-                    <img
+                    <Image
                       src={src}
                       alt={`Motorcycle ${index + 1}`}
+                      height={200}
+                      width={300}
                       className="w-auto h-auto object-cover rounded"
                     />
                   </div>
