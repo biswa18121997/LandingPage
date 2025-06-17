@@ -23,7 +23,7 @@ export default function HeroSection() {
             placeholder="Your email"
             className="border px-3 py-2 rounded w-full sm:w-64"
           />
-          <button className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 w-full sm:w-auto">
+          <button className="bg-blue-800 text-white px-4 py-2 rounded shadow duration-300 hover:bg-blue-600 active:bg-blue-950 w-full sm:w-auto">
             Submit →
           </button>
         </div>

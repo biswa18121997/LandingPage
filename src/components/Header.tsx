@@ -29,7 +29,14 @@ export default function Header() {
         <nav className="hidden md:flex gap-6 text-gray-600 font-medium">
           {arr.map((item, index) => (
             <Link href={item.href} key={index}>
-              <p className="hover:underline cursor-pointer">{item.name}</p>
+              <div className="relative group cursor-pointer border hover:border-2 border-transparent rounded-2xl p-2 hover:underline">
+                <h1 className="font-bold text-lg">{item.name}</h1>
+                <section className="flex flex-col opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[500px] transition-all duration-700 ease-in-out mt-2 space-y-1">
+                  <p className="border-b">1 Lorem ipsum dolor</p>
+                  <p className="border-b">2 Lorem ipsum dolor .</p>
+                  <p className="border-b">3 Lorem ipsum dolor </p>
+                </section>
+              </div>
             </Link>
           ))}
         </nav>
@@ -40,7 +47,7 @@ export default function Header() {
           </button>
         </div>
 
-        <button className="hidden sm:block border bg-blue-600 border-gray-500 px-4 py-1 rounded font-medium text-sm hover:shadow text-white ml-4">
+        <button className="hidden sm:block border active:bg-green-700 hover:bg-blue-400 duration-300 bg-blue-600 border-gray-500 px-4 py-1 rounded font-medium text-sm hover:shadow text-white ml-4">
           Sign In
         </button>
       </div>
@@ -49,7 +56,14 @@ export default function Header() {
         <div className="md:hidden px-4 pb-4 space-y-2 bg-white/90">
           {arr.map((item, index) => (
             <Link href={item.href} key={index}>
-              <p className="block py-2 border-b text-gray-700 hover:underline">{item.name}</p>
+              <div className="relative group cursor-pointer border hover:border-2 border-transparent rounded-2xl p-2 hover:underline">
+                <h1 className="font-bold text-lg">{item.name}</h1>
+                <section className="flex flex-col opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[500px] transition-all duration-700 ease-in-out mt-2 space-y-1">
+                  <p className="border-b">1 Lorem ipsum dolor</p>
+                  <p className="border-b">2 Lorem ipsum dolor .</p>
+                  <p className="border-b">3 Lorem ipsum dolor </p>
+                </section>
+              </div>
             </Link>
           ))}
           <button className="w-full mt-2 border bg-blue-600 border-gray-500 px-4 py-2 rounded font-medium text-sm hover:shadow text-white sm:invisible">

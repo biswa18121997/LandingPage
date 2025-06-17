@@ -1,74 +1,83 @@
+
 "use client";
 
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
+const formSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email"),
+  phone: z.string().min(10, "Phone number is required"),
+  timeframe: z.string().min(1, "Please select a time frame"),
+  size: z.string().min(1, "Please select a size"),
+  quantity: z.string().min(1, "Please select a quantity"),
+  description: z.string().min(1, "Project description is required"),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
 export default function Form() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    timeframe: "",
-    size: "",
-    quantity: "",
-    description: "",
+  const [submitted, setSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Data:", form);
+  const onSubmit = (data: FormData) => {
+    console.log("Validated Form Data:", data);
+    setSubmitted(true);
+    reset(); 
+    setTimeout(() => setSubmitted(false), 3000); 
   };
 
   return (
-    <section className="py-16 px-4 md:px-8  mx-auto bg-white p-10">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-black">REQUEST A QUOTE</h2>
+    <section className="py-16 px-4 md:px-8 mx-auto bg-white p-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-black">
+        REQUEST A QUOTE
+      </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-3 text-neutral-600 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-          <div className="text-black">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 text-neutral-600 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-black">
+          <div>
             <label className="block mb-1 font-medium">Name</label>
             <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
+              {...register("name")}
               className="w-full border rounded-2xl px-4 py-2"
               placeholder="Enter your name"
             />
+            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
           </div>
           <div>
             <label className="block mb-1 font-medium">E-mail</label>
             <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
+              {...register("email")}
               className="w-full border rounded-2xl px-4 py-2"
               placeholder="Enter your email"
             />
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
           </div>
           <div>
             <label className="block mb-1 font-medium">Phone Number</label>
             <input
-              type="text"
-              name="phone"
-              value={form.phone}
-              onChange={handleChange}
+              {...register("phone")}
               className="w-full border rounded-2xl px-4 py-2"
               placeholder="Enter phone number"
             />
+            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
           </div>
           <div>
-            <label className="block mb-1 font-medium">Time Frame<span className="text-red-500">*</span></label>
+            <label className="block mb-1 font-medium">
+              Time Frame<span className="text-red-500">*</span>
+            </label>
             <select
-              title="timeframe"
-              name="timeframe"
-              value={form.timeframe}
-              onChange={handleChange}
+              {...register("timeframe")}
               className="w-full border rounded-2xl px-4 py-2"
             >
               <option value="">Choose Time Frame</option>
@@ -76,14 +85,14 @@ export default function Form() {
               <option>2 Weeks</option>
               <option>1 Month</option>
             </select>
+            {errors.timeframe && <p className="text-red-500 text-sm mt-1">{errors.timeframe.message}</p>}
           </div>
           <div>
-            <label className="block mb-1 font-medium">Size<span className="text-red-500">*</span></label>
+            <label className="block mb-1 font-medium">
+              Size<span className="text-red-500">*</span>
+            </label>
             <select
-              title="size"
-              name="size"
-              value={form.size}
-              onChange={handleChange}
+              {...register("size")}
               className="w-full border rounded-2xl px-4 py-2"
             >
               <option value="">Choose Size</option>
@@ -91,14 +100,14 @@ export default function Form() {
               <option>Medium</option>
               <option>Large</option>
             </select>
+            {errors.size && <p className="text-red-500 text-sm mt-1">{errors.size.message}</p>}
           </div>
           <div>
-            <label className="block mb-1 font-medium">Quantity<span className="text-red-500">*</span></label>
+            <label className="block mb-1 font-medium">
+              Quantity<span className="text-red-500">*</span>
+            </label>
             <select
-              title="quants"
-              name="quantity"
-              value={form.quantity}
-              onChange={handleChange}
+              {...register("quantity")}
               className="w-full border rounded-2xl px-4 py-2"
             >
               <option value="">Choose Quantity</option>
@@ -106,20 +115,20 @@ export default function Form() {
               <option>10-50</option>
               <option>50+</option>
             </select>
+            {errors.quantity && <p className="text-red-500 text-sm mt-1">{errors.quantity.message}</p>}
           </div>
         </div>
 
-        <div>
+        <div className="text-black">
           <label className="block mb-1 font-medium">
             Please Describe Your Project<span className="text-red-500">*</span>
           </label>
           <textarea
-            name="description"
-            value={form.description}
-            onChange={handleChange}
+            {...register("description")}
             className="w-full border rounded-2xl px-4 py-2 h-40"
             placeholder="Choose a project type"
-          ></textarea>
+          />
+          {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>}
         </div>
 
         <p className="text-center text-sm text-gray-500">
@@ -137,6 +146,12 @@ export default function Form() {
           </button>
         </div>
       </form>
+
+      {submitted && (
+        <div className="fixed top-50 right-5 bg-green-500 text-white py-2 px-4 rounded shadow-md">
+          🎉 Quote Request Submitted!
+        </div>
+      )}
     </section>
   );
 }
