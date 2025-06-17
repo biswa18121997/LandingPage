@@ -42,8 +42,7 @@ const HeroWithCard: React.FC<HeroWithCardProps> = ({
           />
         </div>
 
-        {/* Floating Card */}
-        <div className=" absolute bottom-50 right-15 transform translate-x-6 translate-y-6 bg-white rounded-lg shadow-lg max-w-md p-6 text-left">
+        <div className=" absolute bottom-50 right-15 transform translate-x-6 translate-y-6 bg-white/40 text-black md:text-neutral-700 font-semibold md:bg-white  rounded-lg shadow-lg max-w-md p-6 text-left">
           <h3 className="text-lg font-semibold text-gray-800 mb-2">{cardTitle}</h3>
           <p className="text-gray-600 mb-4 text-sm">{cardText}</p>
           <a href="#" className="text-blue-600 font-semibold hover:underline text-sm flex items-center gap-1">
@@ -53,7 +52,6 @@ const HeroWithCard: React.FC<HeroWithCardProps> = ({
         </div>
       </div>
 
-      {/* Dot indicators */}
       <div className="mt-8 flex justify-center items-center gap-2">
         <span className="h-2 w-2 bg-blue-600 rounded-full"></span>
         <span className="h-2 w-2 bg-gray-300 rounded-full"></span>

@@ -1,4 +1,4 @@
-'use client'; // Required because of useState (interactive tab switch)
+'use client'; 
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -25,13 +25,11 @@ export default function HandShake() {
 
   return (
     <section className="flex flex-col md:flex-row items-center justify-center gap-10 p-8 h-screen bg-white">
-      {/* Left: Text + Tabs */}
       <div className="max-w-xl w-full  hover:shadow-black shadow-sm p-5 m-5 rounded-3xl">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           LOREM IPSUM DOLOR SIT AMET
         </h2>
 
-        {/* Tabs */}
         <div className="inline-flex rounded-md border border-gray-300 overflow-hidden mb-4">
           {tabs.map((tab,index) => (
             <button
@@ -48,10 +46,8 @@ export default function HandShake() {
           ))}
         </div>
 
-        {/* Description */}
         <p className="text-gray-600 text-sm mb-4">{content[activeTab]}</p>
 
-        {/* Link */}
         <a
           href="#"
           className="text-blue-600 font-medium inline-flex items-center gap-1 hover:underline"
@@ -60,10 +56,9 @@ export default function HandShake() {
         </a>
       </div>
 
-      {/* Right: Image */}
       <div className="relative w-full max-w-md h-[250px] md:h-[300px] rounded-md overflow-hidden">
         <Image
-          src="/58a292f9cc88b8d1b68a74ca24a02fb0524db98b.png" // Make sure this image exists in `public/images`
+          src="/58a292f9cc88b8d1b68a74ca24a02fb0524db98b.png" 
           alt="Handshake"
           fill
           className="object-cover"

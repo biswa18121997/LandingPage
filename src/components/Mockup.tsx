@@ -5,7 +5,6 @@ export default function Mockup() {
   return (
     <section data-aos="fade-right" className="bg-white py-16">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 bg-gray-200 p-20">
-        {/* Left Content */}
         <div className="md:w-1/2 space-y-5">
           <p className="text-blue-600 text-lg font-bold">Lorem Ipsum</p>
           <h2 className="text-4xl font-bold leading-tight text-neutral-600">
@@ -17,7 +16,6 @@ export default function Mockup() {
             pellentesque. Pellentesque ultricies ipsum.
           </p>
 
-          {/* App Store Buttons */}
           <div className="flex gap-4 mt-6">
             <a href="#">
               <Image
@@ -38,7 +36,6 @@ export default function Mockup() {
           </div>
         </div>
 
-        {/* Right Image */}
         <div className="md:w-1/2 flex justify-center">
           <Image
             src="/4785f5f48409722dcd0eec7c2ca7ba20cbe7823d.png"

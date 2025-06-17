@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function Banner() {
   return (
     <section data-aos="slide-up" className="relative h-[100vh] flex flex-col text-white overflow-hidden ">
-      {/* Background Image */}
         <Image
         src="/ea79ae114d7fd15769db79e9877aef227ad7fabe.png"
         alt="desc"
@@ -16,11 +15,8 @@ export default function Banner() {
         // style={{ height: "auto" }}
         />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 " />
 
-      {/* Content */}
-     
         <div className="bg-white text-black px-4 py-1 w-max font-bold mb-6 z-10 relative m-10">
           LOGO
         </div>

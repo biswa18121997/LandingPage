@@ -1,10 +1,8 @@
-// components/HeroSection.tsx
 import Image from "next/image";
 
 export default function Frame() {
   return (
     <section data-aos="fade-left" className="relative h-[100vh] flex flex-col text-white overflow-hidden ">
-      {/* Background Image */}
         <Image
         src="/883e008d2648b6ba1b6808bc95d6eb3d8925e080.png"
         alt="desc"
@@ -16,10 +14,7 @@ export default function Frame() {
         // style={{ height: "auto" }}
         />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 " />
-
-      {/* Content */}
      
         <div className="bg-white text-black px-4 py-1 w-max font-bold mb-6 z-10 relative m-10">
           LOGO

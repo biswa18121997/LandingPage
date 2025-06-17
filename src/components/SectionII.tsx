@@ -1,4 +1,3 @@
-// components/BusinessSection.tsx
 import Image from "next/image";
 
 type Item = {
@@ -30,8 +29,7 @@ const items: Item[] = [
 
 export default function SectionII() {
   return (
-    <section data-aos="slide-left" className="grid md:grid-cols-2 gap-12 items-center px-8 py-20 bg-white text-black">
-      {/* Left Column */}
+    <section data-aos="slide-left" className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 gap-12 items-center px-8 py-20 bg-white text-black">
       <div>
         <h4 className="text-blue-600 font-semibold mb-2">Lorem ipsum dolor sit amet</h4>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
@@ -51,7 +49,7 @@ export default function SectionII() {
                 alt={`Icon ${idx}`}
                 width={40}
                 height={40}
-                className="min-w-[40px] object-none object-left-top scale-150 "
+                className=" object-none object-left-top scale-150 "
               />
               <div>
                 <h3 className="font-semibold">{item.title}</h3>
@@ -62,8 +60,7 @@ export default function SectionII() {
         </div>
       </div>
 
-      {/* Right Column */}
-      <div className="relative w-full h-[500px]">
+      <div className="relative  w-full h-[500px]">
         <Image
           src="/46db0304b9e3cad81de5ae41e2d4f4d18303be29.png"
           alt="Two men talking"

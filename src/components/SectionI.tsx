@@ -1,4 +1,3 @@
-// components/FeatureSection.tsx
 import Image from "next/image";
 
 type FeatureItem = {
@@ -25,8 +24,7 @@ const features: FeatureItem[] = [
 
 export default function SectionI() {
   return (
-    <section data-aos="slide-right" className="grid md:grid-cols-2 min-h-screen items-center px-6 py-12 bg-white">
-      {/* Left column */}
+    <section data-aos="slide-right" className=" grid md:grid-cols-2 min-h-screen items-center gap-5 px-6 py-12 bg-white">
       <div className="space-y-6">
         <p className="text-blue-600 font-medium">Lorem ipsum dolor sit</p>
         <h2 className="text-4xl font-bold leading-tight text-neutral-600">
@@ -38,7 +36,6 @@ export default function SectionI() {
           aliquet. Hendrerit tellus at purus lectus.
         </p>
 
-        {/* Feature list */}
         <div className="space-y-4">
           {features.map((feature, idx) => (
             <div className="flex gap-4 items-start" key={idx}>
@@ -56,23 +53,22 @@ export default function SectionI() {
           ))}
         </div>
 
-        {/* Button Row */}
-        <div className="flex items-center gap-6 pt-6">
+        <div className="flex items-center gap-6 pt-6 mt-7">
           <button className="bg-blue-600 text-white px-5 py-2 rounded shadow hover:bg-blue-700 text-sm">
             Loremum Ipsum →
           </button>
-          <p className="text-blue-600 font-medium">123456789</p>
+          <p className="text-blue-600 font-medium ">123456789</p>
+          <br />
         </div>
       </div>
 
-      {/* Right image */}
-      <div className="hidden md:block relative h-[600px] w-full">
+      <div className="relative  w-full h-[500px]">
         <Image
           src="/3f330e7e2503a18db023ca88d2372ec66ab52634.png"
           alt="Bikes"
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover rounded"
-          // sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
       </div>

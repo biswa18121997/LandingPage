@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    icon: '⚡', // Placeholder emoji for icon (can be replaced with SVG)
+    icon: '⚡', 
     text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod.",
     name: "Jane Cooper",
     avatar: "/0cc01b19636d56320e77e0c30059f5904a28075c.jpg"
@@ -29,7 +29,7 @@ const testimonials = [
 
 export default function Slider() {
   return (
-    <section className="bg-blue-600 text-white py-16 px-4 md:px-12 h-screen">
+    <section className="bg-blue-600 text-white py-16 px-4 md:px-12 h-fit">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <p className="text-lg font-medium">Join other Sun harvesters</p>
@@ -42,9 +42,9 @@ export default function Slider() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-scroll 1/2 ">
+        <div className="flex gap-6 overflow-x-scroll md:flex-nowrap pb-5">
           {testimonials.map((item, i) => (
-            <div key={i} className="bg-white text-black rounded-lg p-5 shadow-md flex flex-col justify-between h-full">
+            <div key={i} className="bg-white  text-black rounded-lg p-5 shadow-md flex flex-col justify-between min-h-64 min-w-96 max-w-full overflow-y-scroll">
               <div>
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <p className="text-sm text-gray-700 mb-6">{item.text}</p>

@@ -11,7 +11,6 @@ export default function SectionSix() {
   return (
     <section data-aos="fade-left" className="bg-gray-100 py-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-around gap-10 px-6">
-        {/* Left section */}
         <div className="flex-1 max-w-xl">
           <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4 leading-tight">
             LOREM IPSUM DOLOR SIT <br />
@@ -27,7 +26,6 @@ export default function SectionSix() {
             Lorem Ipsum →
           </button>
 
-          {/* Descriptive Card */}
           <div className="bg-white p-6  shadow-md rounded-md relative top-30">
             <h3 className="font-semibold text-gray-900 mb-3">
               Lorem ipsum dolor sit
@@ -44,7 +42,6 @@ export default function SectionSix() {
           </div>
         </div>
 
-        {/* Right image section */}
             <Image
               src={'/b516b95a7c5e758d7b71c4a5b876a7ed582abb38.png'}
               alt="Scooter Showcase"

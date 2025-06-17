@@ -1,4 +1,3 @@
-// components/QuoteForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -22,7 +21,6 @@ export default function Form() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data:", form);
-    // Add API integration or validation here
   };
 
   return (
@@ -67,6 +65,7 @@ export default function Form() {
           <div>
             <label className="block mb-1 font-medium">Time Frame<span className="text-red-500">*</span></label>
             <select
+              title="timeframe"
               name="timeframe"
               value={form.timeframe}
               onChange={handleChange}
@@ -81,6 +80,7 @@ export default function Form() {
           <div>
             <label className="block mb-1 font-medium">Size<span className="text-red-500">*</span></label>
             <select
+              title="size"
               name="size"
               value={form.size}
               onChange={handleChange}
@@ -95,6 +95,7 @@ export default function Form() {
           <div>
             <label className="block mb-1 font-medium">Quantity<span className="text-red-500">*</span></label>
             <select
+              title="quants"
               name="quantity"
               value={form.quantity}
               onChange={handleChange}

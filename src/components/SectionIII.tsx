@@ -1,4 +1,3 @@
-// components/CardGrid.tsx
 import Image from "next/image";
 
 type Card = {
@@ -42,10 +41,8 @@ const cards: Card[] = [
 export default function SectionIII() {
   return (
     <section className="py-12 px-4 md:px-10 bg-white relative">
-      {/* Background pattern (optional) */}
       <div className="absolute left-0 top-0 h-full w-1/2 bg-[url('/background-pattern.svg')] bg-no-repeat bg-left bg-contain pointer-events-none" />
 
-      {/* Heading */}
       <div className="relative z-10 text-center max-w-3xl mx-auto mb-12">
         <p className="text-blue-600 font-semibold mb-2">Lorem ipsum dolor sit amet</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">LOREM IPSUM DOLOR SIT</h2>
@@ -55,7 +52,6 @@ export default function SectionIII() {
         </p>
       </div>
 
-      {/* Card Grid */}
       <div data-aos='fade-right' className="relative z-10 grid grid-cols-1 sm:grid-cols-2  gap-5 gap-x-3 justify-items-center">
         {cards.map((card) => (
           <div

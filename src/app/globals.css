@@ -3,14 +3,15 @@
 @import 'aos/dist/aos.css';
 
 
-@custom-variant dark (&:is(.dark *));
 
 body {
   margin : 0px;
 }
 
-.clip-polygon {
-  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+@media (min-width: 768px) {
+  .clip-polygon {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+  }
 }
 
 @theme inline {
